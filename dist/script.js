@@ -9,4 +9,4 @@ document.querySelector('#year').textContent=new Date().getFullYear();
 
 // Reveal the selected service before navigating to its details.
 document.querySelectorAll('.care-strip a[href^="#"]').forEach(link=>link.addEventListener('click',()=>{const panel=document.querySelector(link.getAttribute('href'));if(panel?.tagName==='DETAILS')panel.open=true;}));
-document.querySelectorAll('.service-list details').forEach(panel=>panel.addEventListener('toggle',()=>{panel.querySelector('.view-label').textContent=panel.open?'Close details':'View details';}));
+document.querySelectorAll('.service-close').forEach(button=>button.addEventListener('click',()=>{const panel=button.closest('details');panel.open=false;panel.querySelector('summary').focus();}));
