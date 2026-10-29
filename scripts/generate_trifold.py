@@ -110,15 +110,15 @@ rect(x,581,cw,2,RED)
 
 x=289;cw=223
 label('Home rehabilitation',x,29,cw)
-heading('Help with everyday\nindependence.',x,55,cw,20)
-photo(photos/'home-rehabilitation.jpg',x,120,cw,125,.35)
+heading('Home Rehabilitation\nServices',x,55,cw,20)
+photo(photos/'home-rehabilitation.jpg',x,120,cw,80,.35)
 rehab=site.find(id='rehabilitation')
-top=para(rehab.find(cls='detail-body').find(tag='p').text(),x,265,cw,9.4,12.5)+14
+top=para(rehab.find(cls='detail-body').find(tag='p').text(),x,220,cw,9.4,12.5)+10
 therapy=rehab.find(cls='therapy')
 for n in therapy.children:
  if not isinstance(n,Node):continue
- if n.tag=='h3':top=para(n.text(),x,top,cw,10,13,'SourceBold',NAVY)+5
- elif n.tag=='p':top=para(n.text(),x,top,cw,9.4,12.5)+13
+ if n.tag=='h3':top=para(n.text(),x,top,cw,10,13,'SourceBold',NAVY)+4
+ elif n.tag=='p':top=para(n.text(),x,top,cw,9.4,12.5)+9
 social=site.find(id='social');heading(social.find(tag='strong').text(),x,top,cw,15)
 para(social.find(cls='detail-body').text(),x,top+28,cw,9.4,12.5)
 
